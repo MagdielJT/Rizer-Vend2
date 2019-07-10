@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "vend-interface2-rizer",
+  "alias": "vend-interface2-rizer",
+
+  "builds": [{
+    "src": "index.js",
+    "use": "@now/node-server"
+  }],
+  "routes": [
+    { "src": "/", "dest": "index.js" },
+    { "src": "/nyscollection/sale-update", "dest": "index.js" },
+    { "src": "/accesoriosrizer/sale-update", "dest": "index.js" }
+    
+  ]
+}
