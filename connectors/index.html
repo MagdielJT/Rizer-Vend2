@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        
+    </head>
+    <body>
+        <noscript>
+            <strong>We're sorry but vue-cli-new doesn't work properly without JavaScript
+                enabled. Please enable it to continue.</strong>
+        </noscript>
+        <div id="app">
+            <input type="button" id = "btn-get" value="Enviar"/>
+        </div>
+        
+    </body>
+    <script>
+            
+            $( "#btn-get" ).click(function() {
+                $.ajax({
+                    method: "POST",
+                    contentType: "application/json",
+                    url: "https://tstdrv905028.app.netsuite.com/app/site/hosting/restlet.nl?script=6",
+                    data: {
+                        consumerKey: 'ada6da8e53953f1ba767a8de4011cf8b262e2eb4fe7e19b0beb0b0f83798c9e1',
+                        consumerSecret: '1aa061a00152cbaad80595a674d44e53cf3df66f04202d8c2b3cbaebf66a354d',
+                        tokenKey: 'ca928e068a6d5611cc3e4d6d01df4ab85bfd4d9ef8f5a93e3643854c203cf3e6',
+                        tokenSecret: '5b93dd54c80d70a3bb80bd4fa6481b30dbe3292657a52c41d8166989797c08df',
+                        accountId: 'TSTDRV905028',
+                        "custparam_mode": "searchCustomer",
+                        "custparam_rfc": "PZA000413788"
+                    }
+                })
+                .done(function( msg ) {
+                    alert( "Data Saved: " + msg );
+                });
+            });
+        </script>
+</html>
