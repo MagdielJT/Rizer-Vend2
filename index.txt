@@ -9,17 +9,21 @@ const handleInventoryAdjustment = require('./handlers/inventoryAdjustment');
 
 const router = new Router();
 const app = new Koa();
+
 app.use(logger());
+
 app.use(bodyParser());
 
 const urlList = [
-  { url: '/:store/process-ticket', fun: handleSaleUpdate },
+  { url: '/:store/sale-update', fun: handleSaleUpdate },
   // { url: '/:store/create-products', fun: handleCreateProducts },
   // { url: '/:store/inventory-adjustment', fun: handleInventoryAdjustment },
 ];
 
 urlList.forEach(({url, fun}) => {
   router.post(url, async (ctx) => {
+    console.log("store", ctx.params.store);
+    console.log("payload", ctx.request.body.payload);
     ctx.body = await fun(ctx.request.body, ctx.params.store);
   });
 })

@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.17.1",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
+    "netsuite-tba-oauth": "^0.8.0",
     "node-fetch": "^2.2.0",
     "nsrestlet": "^1.0.1",
     "qs": "^6.5.2"
